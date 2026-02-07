@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Coraima 💖</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffe6f0;
+      text-align: center;
+      padding-top: 80px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      margin: 10px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    #si { background: #ff4d88; color: white; }
+    #no { background: #ccc; }
+    textarea {
+      width: 80%;
+      height: 80px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Coraima 💕</h1>
+<h2>¿Quieres pasar San Valentín conmigo? 💘</h2>
+
+<button id="si" onclick="mostrarPregunta()">Sí 💖</button>
+<button id="no" onmouseover="moverNo()">No 😢</button>
+
+<div id="pregunta" style="display:none;">
+  <h3>¿Por qué quieres pasar San Valentín conmigo? 🥰</h3>
+
+  <form action="https://formspree.io/f/TU_ID_AQUI" method="POST">
+    <textarea name="respuesta" placeholder="Escribe aquí 💌" required></textarea><br><br>
+    <input type="hidden" name="nombre" value="Coraima">
+    <button type="submit" id="si">Enviar 💖</button>
+  </form>
+</div>
+
+<script>
+  function mostrarPregunta() {
+    document.getElementById("pregunta").style.display = "block";
+  }
+
+  function moverNo() {
+    const no = document.getElementById("no");
+    no.style.position = "absolute";
+    no.style.top = Math.random() * 80 + "%";
+    no.style.left = Math.random() * 80 + "%";
+  }
+</script>
+
+</body>
+</html>
